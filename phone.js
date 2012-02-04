@@ -79,14 +79,14 @@ function Phone(canvas, phone, options) {
 					height : 131,
 					xoffset : 45,
 					yoffset : 135,
-					imguri : '/images/demos/dtv_message_android.png'
+					imguri : ''
 				},
 				webimg : {
 					width : 210,
 					height : 300,
 					xoffset : 32,
 					yoffset : 61,
-					imguri : '/images/demos/dtv_web_android.png'
+					imguri : ''
 				}
 			},
 			iphone_dtv : {
@@ -97,14 +97,14 @@ function Phone(canvas, phone, options) {
 					height : 184,
 					xoffset : 48,
 					yoffset : 135,
-					imguri : '/images/demos/dtv_message_iphone.png'
+					imguri : ''
 				},
 				webimg : {
 					width : 221,
 					height : 302,
 					xoffset : 27,
 					yoffset : 84,
-					imguri : '/images/demos/dtv_web_iphone.png'
+					imguri : ''
 				}
 			}
 		}
