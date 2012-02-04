@@ -8,7 +8,7 @@ function Phone(canvas, phone, options) {
 			iphone : {
 				height : 492,
 				width : 275,
-				bgimg : '/images/phones/iphone.png',
+				bgimg : '../images/iphone.png',
 				bgheight : 302,
 				bgwidth : 221,
 				bgxoff : 27,
@@ -40,7 +40,7 @@ function Phone(canvas, phone, options) {
 			android : {
 				height : 492,
 				width : 275,
-				bgimg : '/images/phones/android.png',
+				bgimg : '../images/android.png',
 				bgheight : 300,
 				bgwidth : 210,
 				bgxoff : 32,
@@ -73,7 +73,7 @@ function Phone(canvas, phone, options) {
 		demos : {
 			android_dtv : {
 				phonetype : 'android',
-				digits : '**DIRECTV',
+				digits : '5555555555',
 				textmsg : {
 					width : 187,
 					height : 131,
@@ -91,7 +91,7 @@ function Phone(canvas, phone, options) {
 			},
 			iphone_dtv : {
 				phonetype : 'iphone',
-				digits : '**DIRECTV',
+				digits : '5555555555',
 				textmsg : {
 					width : 176,
 					height : 184,
@@ -344,7 +344,20 @@ function Phone(canvas, phone, options) {
 
 	return {
 		// Public methods
-		dial : function(number) {
+		dial : function(number,phonetype) {
+			if (phonetype == null){
+				var arr_demos = [];
+				jQuery.each(options.demos, function(index, value) {
+					arr_demos.push(value);
+				});
+				m_demo = arr_demos[Math.floor(Math.random() * arr_demos.length)];
+				phonetype = m_demo.phonetype;
+			}
+
+			// Load Phone
+			phone = options.phones[phonetype];
+			// Draw Phone
+			drawPhone(phone);
 			reset();
 			var numbers = number.split('');
 			for(var num = 0, nlen = numbers.length; num < nlen; num++) {
